@@ -1,0 +1,85 @@
+def suma (num1): #función que corresponde a la suma
+    num2=int(input("ingrese el número que desea sumar a número guardado \n"))
+    num3=num1+num2
+    print (f"la suma entre {num1} y {num2} es {num3}")
+    return num3
+
+def resta (num1): #funcion que corresponde a la resta
+    num2=int(input("ingrese el número que desea restar a número guardado \n"))
+    num3=num1-num2
+    print (f"El resultado de restar {num2} a {num1} es {num3}")
+    return num3
+
+def multiplicacion(num1): #función que corresponde a la multiplicación
+    num2=int(input("ingrese el número que desea multiplicar a número guardado \n"))
+    num3=num1*num2
+    print (f"la multiplicación entre {num1} y {num2} es {num3}")
+    return num3
+
+def division(num1):
+    num2=int(input("ingrese el número con el que quieres dividir al número guardado \n"))
+    num3=num1/num2
+    print (f"el cociente de {num1} entre {num2} es {num3}")
+    return num3
+
+def potencia(num1):
+    num2=int(input("ingrese la potencia a la que desea elevar al número guardado \n"))
+    num3=num1**num2
+    print (f"el resultado de elevar a  {num1} a la {num2} potencia es {num3}")
+    return num3
+
+def raiz(num1): #esta es la funcion que corresponde a la raiz
+    num2=int(input(f"ingrese la raiz que quiere sacarle a {num1}\n"))
+    radical=num2
+    num2=1/num2 #las raices se pueden representar como un número elevado a una fracción, en este caso 1/m o 1/n
+    num3=num1**num2 #para elevar un número se ocupa el operador "**"
+    print (f"la raiz {radical} de {num1} es {num3}")
+    return num3
+
+def calculadora(): #función que corresponde a la calculadora
+    opc=10
+    numero=int(input("ingrese el número:\n"))
+    while opc!=8:
+        print (f"el número guardado es: {numero}")
+        print ("¿que desea hacer con el número guardado")
+        print ("1.-Realizar una suma")
+        print ("2.-Realizar una resta")
+        print ("3.-Realizar una multiplicación")
+        print ("4.-Dividirlo entre otro número")
+        print ("5.-Elevarlo a una potencia")
+        print ("6.- Sacarle una raiz")
+        print ("7.- Limpiar la entrada")
+        print ("8.-Regresar al menú")
+        opc=int(input("ingrese una opción: "))
+
+        if opc<1 or opc>8:
+            print ("ingrese una opción válida")
+        elif opc==1:
+            numero=suma(numero)
+        elif opc==2:
+            numero=resta(numero)
+        elif opc==3:
+            numero=multiplicacion(numero)
+        elif opc==4:
+            numero=division(numero)
+        elif opc==5:
+            numero=potencia(numero)
+        elif opc==6:
+            numero=raiz(numero)
+        elif opc==7:
+            numero=int(input("ingrese el número nuevo:\n"))
+ 
+def menú(): #función que corresponde al menú
+    opc=7
+    print  ("bienvenido")  
+    while opc!=2:
+        print ("1.-usar la calculadora")
+        print ("2.- salir")
+        opc=int(input ("¿qué desea hacer? \n"))
+        if opc<1 or opc>2:
+            print ("selecciones una opción válida")
+        elif opc==1:
+            calculadora()
+        elif opc==2:
+            print ("gracias por usar la calculadora :)")
+menú() #iniciamos el menú
